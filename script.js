@@ -1,89 +1,89 @@
 let allbtn = document.querySelectorAll("button"); //node-list of all btns
 let display  = document.querySelector(".display");
-allbtn.forEach(function(val) {
-    val.addEventListener('click',function() {
-      if (val.innerText == "DEL") {
-          display.value = display.value.slice(0, -1); // using slice we are addng backspace
+// allbtn.forEach(function(val) {
+//     val.addEventListener('click',function() {
+//       if (val.innerText == "DEL") {
+//           display.value = display.value.slice(0, -1); // using slice we are addng backspace
 
-      }
-      else if (val.innerText === "=")
-        { display.value = eval(display.value) //eval caute the value if the value avail in string
-  }
-     else if (val.innerText === "AC"){
-       display.value = ""
-     }
-      else
-    display.value += val.innerText
+//       }
+//       else if (val.innerText === "=")
+//         { display.value = eval(display.value) //eval caute the value if the value avail in string
+//   }
+//      else if (val.innerText === "AC"){
+//        display.value = ""
+//      }
+//       else
+//     display.value += val.innerText
 
-  })
+//   })
 
-});
+// });
 
 
 
-// making calculator using without eval
-let num1 = null;
-let op = null;
-let operator = ["+","-","/","%","*","**"];
+// // making calculator using without eval
+// let num1 = null;
+// let op = null;
+// let operator = ["+","-","/","%","*","**"];
 
-allbtn.forEach(function (val) {
-  val.addEventListener("click", function getvalue() {
-    // console.log(val);
+// allbtn.forEach(function (val) {
+//   val.addEventListener("click", function getvalue() {
+//     // console.log(val);
    
-    if (val.innerText === '=') {
-      calculation() // = click par calculation run hogi
-    }
+//     if (val.innerText === '=') {
+//       calculation() // = click par calculation run hogi
+//     }
 
-else if (val.innerText === "AC" ){
-  display.value = " "
-}
+// else if (val.innerText === "AC" ){
+//   display.value = " "
+// }
 
-else if (val.innerText === "DEL"){
-display.value =  display.value.slice(0,-1)
-}
-  else  display.value += val.innerText;
-  });
-});
+// else if (val.innerText === "DEL"){
+// display.value =  display.value.slice(0,-1)
+// }
+//   else  display.value += val.innerText;
+//   });
+// });
 
 
-function calculation() {
-  let result ;
- for (let i = 0; i < operator.length; i++) { // running loop on operator
-if (display.value.includes(operator[i])) {
-  op = operator[i];
-  console.log(op);
-  let parts = display.value.split(op) // breaking into array num1 last num  with  operator
-  console.log(parts);
-  num1 =parts[0]
-  num2 =parts[1]
-  break;
-}  
- }
- if (op=== '+') {
-  display.value = Number(num1) + Number(num2)
- }
+// function calculation() {
+//   let result ;
+//  for (let i = 0; i < operator.length; i++) { // running loop on operator
+// if (display.value.includes(operator[i])) {
+//   op = operator[i];
+//   console.log(op);
+//   let parts = display.value.split(op) // breaking into array num1 last num  with  operator
+//   console.log(parts);
+//   num1 =parts[0]
+//   num2 =parts[1]
+//   break;
+// }  
+//  }
+//  if (op=== '+') {
+//   display.value = Number(num1) + Number(num2)
+//  }
 
-else if (op === '-') {
-    display.value = Number(num1) -  Number(num2)
-}
+// else if (op === '-') {
+//     display.value = Number(num1) -  Number(num2)
+// }
 
-else if (op === '*') {
-    display.value = Number(num1) * Number(num2)
-}
+// else if (op === '*') {
+//     display.value = Number(num1) * Number(num2)
+// }
 
-else if (op === '%') {
-    display.value = Number(num1) % Number(num2)
-}
+// else if (op === '%') {
+//     display.value = Number(num1) % Number(num2)
+// }
 
-else if (op === '/') {
-    display.value = Number(num1) / Number(num2)
-}
+// else if (op === '/') {
+//     display.value = Number(num1) / Number(num2)
+// }
 
-else if (op === '**') {
-    display.value = Number(num1) ** Number(num2)
-}
+// else if (op === '**') {
+//     display.value = Number(num1) ** Number(num2)
+// }
 
-}
+// }
 
 
 // making the calculator works with multiple opernds
