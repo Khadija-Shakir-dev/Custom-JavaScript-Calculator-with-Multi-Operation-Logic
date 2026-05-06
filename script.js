@@ -113,11 +113,11 @@ allbtn.forEach(function (btn) {
 });
 
 
-// 🔥 MAIN CALCULATION FUNCTION (no eval)
+//  MAIN CALCULATION FUNCTION (no eval)
 function calculation() {
 
   // Step 1: string → tokens
-let tokenArr = display.value.match(/(\d+|\+|\*\*|\-|\*|\/|\%)/g) // break the display value into roken array jo match hoys
+let tokenArr = display.value.match(/(\d+\.?\d*|\+|\*\*|\-|\*|\/|\%)/g) // break the display value into roken array jo match hoys
 //step 2 assngning the first number: 
 if (!tokenArr) display.value = "Error"
 
