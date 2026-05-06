@@ -117,7 +117,7 @@ allbtn.forEach(function (btn) {
 function calculation() {
 
   // Step 1: string → tokens
-let tokenArr = display.value.match(/(\d+|\+|\*|\-|\**|\/|\%)/g) // break the display value into roken array jo n=match hoys
+let tokenArr = display.value.match(/(\d+|\+|\*\*|\-|\*|\/|\%)/g) // break the display value into roken array jo match hoys
 //step 2 assngning the first number: 
 if (!tokenArr) display.value = "Error"
 
@@ -133,7 +133,7 @@ else if (op === '-')  result -= num
 else if (op === '%')  result %= num
 else if (op === '/')  result /= num
 else if (op === '*')  result *= num
-else if (op === '**')  result **= num
+else if (op === '**')  result =  Math.pow(result,num); //result num  ** last num
 }
 
 display.value = result
